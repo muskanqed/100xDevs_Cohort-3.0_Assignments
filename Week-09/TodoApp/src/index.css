@@ -56,9 +56,7 @@ input[type="text"] {
 body {
   background-color: #f5f5f5;
   color: #4d4d4d;
-  font:
-    1.6rem/1.25 Arial,
-    sans-serif;
+  font: 1.6rem/1.25 Arial, sans-serif;
   margin: 0 auto;
   max-width: 68rem;
   width: 100%;
@@ -150,9 +148,7 @@ body {
 /* General app styles */
 .todoapp {
   background: #fff;
-  box-shadow:
-    0 2px 4px 0 rgb(0 0 0 / 20%),
-    0 2.5rem 5rem 0 rgb(0 0 0 / 10%);
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 2.5rem 5rem 0 rgb(0 0 0 / 10%);
   margin: 2rem 0 4rem 0;
   padding: 1rem;
   position: relative;
