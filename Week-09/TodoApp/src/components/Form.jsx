@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function Form(props) {
-const [name, setName] = useState("");
+    const [name, setName] = useState("");
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -10,8 +10,8 @@ const [name, setName] = useState("");
     }
 
     function handleChange(event) {
-       setName(event.target.value)
-      }
+        setName(event.target.value)
+    }
 
     return (
         <>

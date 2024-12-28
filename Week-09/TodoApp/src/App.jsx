@@ -7,8 +7,22 @@ import FilterButton from "./components/FilterButton";
 function App(props) {
   const [tasks, setTasks] = useState(props.tasks);
 
+  function deleteTask(id) {
+    const remainingTasks = tasks.filter((task) => id !== task.id)
+    setTasks(remainingTasks);
+    // The code id !== task.id is part of the filter method, which is used to create a new array by including only the items that satisfy the given condition.
+    // If id !== task.id evaluates to true, the task will be included in the new array (remainingTasks).
+    // If id !== task.id evaluates to false, the task will be excluded (i.e., removed from the new array).
+  }
+
   function toggleTaskCompleted(id) {
-    console.log(tasks[0]);
+    const updatedTasks = tasks.map((task) => {
+      if (id === task.id) {
+        return { ...task, completed: !task.completed }
+      }
+      return task;
+    });
+    setTasks(updatedTasks)
   }
 
   const taskList = tasks?.map((task) => (
@@ -18,6 +32,7 @@ function App(props) {
       completed={task.completed}
       key={task.id}
       toggleTaskCompleted={toggleTaskCompleted}
+      deleteTask={deleteTask}
     />
   ));
 
