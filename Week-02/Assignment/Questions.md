@@ -1,92 +1,133 @@
 # 📚 Week-02 Assignment
 
+Welcome to Week 02! This week's assignments are designed to help you understand core JavaScript concepts including asynchronous tasks, file I/O, string operations, Promises, and working with classes.
+
 ---
 
 ## 🟢 Easy
 
-### Q1: Create a counter in JavaScript
+### ✅ Q1: Counter with `setInterval`
 
-We have already covered this in the second lesson, but as an easy recap try to code a counter in Javascript
-It should go up as time goes by in intervals of 1 second
+Create a counter in JavaScript that increments every second. Use `setInterval` for this.
 
-### Q2: Counter without setInterval
+### ✅ Q2: Counter without `setInterval`
 
-Without using setInterval, try to code a counter in Javascript. There is a hint at the bottom of the file if you get stuck
+Recreate the counter without using `setInterval`. (Hint: You can use `setTimeout` recursively.)
 
-### Q3: Reading the contents of a file
+### ✅ Q3: Reading the Contents of a File
 
-Write code to read contents of a file and print it to the console.
-You can use the fs library to as a black box, the goal is to understand async tasks.
-Try to do an expensive operation below the file read and see how it affects the output.
-Make the expensive operation more and more expensive and see how it affects the output.
+Use the `fs` module to read and print the contents of a file asynchronously. Add an expensive operation afterward and observe how it affects the output order.
 
-### Q3: Write to a file
+### ✅ Q4: Write to a File
 
-Using the fs library again, try to write to the contents of a file.
-You can use the fs library to as a black box, the goal is to understand async tasks.
+Use the `fs` module to write data to a file asynchronously. Understand how async writing behaves.
+
+### ✅ Q5: Anagram Checker
+
+Write a function `isAnagram(str1, str2)` that returns `true` if the strings are anagrams of each other, `false` otherwise.
+
+### ✅ Q6: Expenditure Analysis
+
+Implement a function `calculateTotalSpentByCategory(transactions)` that returns the total spending grouped by category.
+
+```js
+// Sample transaction format
+{
+  id: 1,
+  timestamp: 1656076800000,
+  price: 10,
+  category: 'Food',
+  itemName: 'Pizza',
+}
+
+// Output
+[{ category: 'Food', totalSpent: 10 }]
+```
+
+### ✅ Q7: Find the Largest Number
+
+Write a function `findLargestElement(numbers)` that returns the largest number in an array.
+
+---
 
 ## 🟡 Medium
 
-### Q1: File cleaner
+### 🕐 Q1: File Cleaner
 
-Read a file, remove all the extra spaces and write it back to the same file.
+Read a file, remove extra spaces between words, and write the cleaned-up content back to the file.
 
-For example, if the file input was
-
-```
-hello     world    my    name   is       raman
-```
-
-After the program runs, the output should be
-
-```
-hello world my name is raman
+```txt
+Input:  "hello     world    my    name   is       raman"
+Output: "hello world my name is raman"
 ```
 
-### Q2: Clock
+### ⏰ Q2: Digital Clock
 
-- 1-counter.md:
+Use one of your counters to display a digital clock that updates every second in these formats:
 
-#### Create a counter in JavaScript
+- `HH:MM:SS`
+- `HH:MM:SS AM/PM`
 
-We have already covered this in the second lesson, but as an easy recap try to code a counter in Javascript
-It should go up as time goes by in intervals of 1 second
+### 🔤 Q3: Count Vowels
 
-- 2-counter.md:
+Implement `countVowels(str)` to return the number of vowels (case-insensitive) in a string.
 
-#### Counter without setInterval
+### 🔁 Q4: Palindrome Checker
 
-Without using setInterval, try to code a counter in Javascript. There is a hint at the bottom of the file if you get stuck
+Implement `isPalindrome(str)` to check if the string is a palindrome (case-insensitive).
 
-Using `1-counter.md` or `2-counter.md` from the easy section, can you create a
-clock that shows you the current machine time?
+### ⏱ Q5: Computation Time Measurement
 
-Can you make it so that it updates every second, and shows time in the following formats -
+Create a function that calculates the time (in seconds) it takes to sum numbers from `1` to `n`. Try with:
 
-- HH:MM::SS (Eg. 13:45:23)
+- 100
+- 100000
+- 1000000000
 
-- HH:MM::SS AM/PM (Eg 01:45:23 PM)
+Use `Date.now()` or `performance.now()` to measure time taken.
+
+---
 
 ## 🔴 Hard
 
-/\*
+### ⏸ Q1: Busy Wait
 
-- Q1: Write a function that halts the JS thread (make it busy wait) for a given number of milliseconds.
-- During this time the thread should not be able to do anything else.
-- The function should return a promise just like before.
-  \*/
+Write a function that halts the JS thread (busy-wait) for a specified number of milliseconds. Return a `Promise` that resolves afterward.
 
-/\*
+### 🔗 Q2: `Promise.all` Timing
 
-- Q2: Write 3 different functions that return promises that resolve after t, t, and t seconds respectively.
-- Write a function that uses the 3 functions to wait for all 3 promises to resolve using Promise.all.
-- Return a Promise which returns the time in milliseconds it takes to complete the entire operation.
-  \*/
+Write 3 async functions that resolve after `t` seconds. Then use `Promise.all` and return the total time it took to resolve all.
 
-/\*
+### 🔁 Q3: Sequential Promises
 
-- Q3: Write 3 different functions that return promises that resolve after t1, t2, and t3 seconds respectively.
-- Write a function that sequentially calls all 3 of these functions in order.
-- Return a promise chain which returns the time in milliseconds it takes to complete the entire operation.
-- Compare it with the results from 3-promise-all.js
-  \*/
+Write 3 async functions that resolve after `t1`, `t2`, and `t3` seconds respectively. Call them **sequentially**, then return the total time taken. Compare with the parallel method in Q2.
+
+### ➕ Q4: Calculator Class
+
+Create a `Calculator` class with:
+
+- `add(num)`
+- `subtract(num)`
+- `multiply(num)`
+- `divide(num)`
+- `clear()`
+- `getResult()`
+- `calculate(expression)` — takes a string like `"10 + 2 * (6 - (4 + 1) / 2) + 7"`
+
+**Note:**
+
+- Handle multiple spaces and invalid characters like `abc`.
+- Throw appropriate errors for invalid expressions.
+
+### 📋 Q5: Todo Class
+
+Create a `Todo` class with:
+
+- `add(todo)`
+- `remove(index)`
+- `update(index, updatedTodo)`
+- `getAll()`
+- `get(index)`
+- `clear()`
+
+---
