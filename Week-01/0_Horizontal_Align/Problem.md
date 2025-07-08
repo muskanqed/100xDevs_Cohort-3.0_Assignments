@@ -2,3 +2,5 @@
 
 - Hardcode its width to be 1200px.
 - Hardcode its height to be 500px.
+
+![alt text](photo.png)
